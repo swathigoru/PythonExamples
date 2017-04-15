@@ -13,6 +13,6 @@ n = input("Enter any number for a pyramid:")
 str1 = ''
 for i in range(n):
     str1+=  "#"
-    print(str1.rjust(10,' '))
+    print(str1.rjust(n,' '))
     #print i
 #print("End")
