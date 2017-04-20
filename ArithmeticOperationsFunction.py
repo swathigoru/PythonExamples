@@ -5,6 +5,7 @@ option = input("Choose an operation:\n1.Add\n2.Subtract\n3.Multiply\n4.Division:
 
 def display(result):
     print "Result = {0}".format(result)
+
 def sum1(user_input1,user_input2):
     result = (user_input1 + user_input2)
     display(result)
