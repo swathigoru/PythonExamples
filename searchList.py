@@ -12,11 +12,11 @@ def split_list(s):
 
 
 def search_list(string_input, n):    
+    result = "False"
     for i in range(len(string_input)):
         if n == string_input[i]:
             result = "True"
             break
-        else: result = "False"
     print result
 
 string_input = raw_input("Enter a list of numbers in ascending order:")
