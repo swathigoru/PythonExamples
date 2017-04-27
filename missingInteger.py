@@ -7,8 +7,8 @@ and [3,4,-1,1] return 2."""
 def convertToList(s):
     input_list = s.split()
     input_list = [int(x) for x in input_list]
-    print type(input_list)
-    print input_list
+    #print type(input_list)
+    #print input_list
     return input_list
 
 def main():
