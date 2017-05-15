@@ -1,0 +1,9 @@
+Amazon web services
+comprises dozens of services,
+each of which exposes an area of functionality.
+While the variety of services offers flexibility
+for how you want to manage your AWS infrastructure,
+it can be challenging to figure out which services to use and how to provision them.
+With Elastic Beanstalk, you can quickly deploy
+and manage applications in the AWS cloud
+without worrying about the infrastructure that runs those applications.

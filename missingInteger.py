@@ -20,6 +20,8 @@ def main():
     print sorted_array
 
     missing_number = 1
+    
+    #to capture cases when the list has only 1 integer and if it is a positive number
     if (len(sorted_array) == 1):
         if (sorted_array[0] > 0) :
             missing_number = sorted_array[0] + 1
