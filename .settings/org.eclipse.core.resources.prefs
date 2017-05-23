@@ -6,4 +6,5 @@ encoding/indexFileContent.py=utf-8
 encoding/missingInteger.py=utf-8
 encoding/readFile.py=utf-8
 encoding/searchList.py=utf-8
+encoding/webScraperEc.py=utf-8
 encoding/wordLengthFile.py=utf-8
