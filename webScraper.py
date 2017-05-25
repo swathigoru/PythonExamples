@@ -1,21 +1,27 @@
 import requests
 from bs4 import BeautifulSoup
 
-def webscrpr():
-    page = requests.get("http://www.accuweather.com/en/us/briarcliff-manor-ny/10510/may-weather/2146224") 
-    soup = BeautifulSoup(page.content)
-    text = soup.findAll("td",{"class":"today"})
-    data = text[0].get_text().split('\n')
-    #print data
-    #print type(data)
-    newdict = {}
-    newdict['day_and_Date'] = data[2]
-    newdict['max_temp'] = data[6]
-    newdict['min_temp'] = data[7]
-    newdict['weather_condition'] = data[9]
-    newdict['historical'] = data[12]
-    print newdict
+def webscrpr1(url):
+    page = requests.get(url) 
+    soup = BeautifulSoup(page.content,"html.parser")
+    text = soup.findAll("table")
+    
+    newtext = text[0].findAll("td")
+    #print newtext
+    
+    newlist = []
+    for i in range(len(newtext)):
+        newdict = {}
+        
+        newdict["day_and_date"] = newtext[i].findAll("h3")[0].get_text()
+        newdict["max_temp"] = newtext[i].findAll("span",{"class":"large-temp"})[0].get_text()
+        newdict["min_temp"] = newtext[i].findAll("span",{"class":"small-temp"})[0].get_text()
+        newdict["weather condition"] = newtext[i].findAll("div",{"class":"cond"})[0].get_text()
+        newdict["historical_high"] = newtext[i].findAll("span",{"class":"temp"})[0].get_text()
+        newdict["average"] = newtext[i].findAll("span",{"class":"lo"})[0].get_text()
+        newlist.append(newdict)
+    
+    
+    for i in newlist: print i
 
-webscrpr()
-
-
+webscrpr1("http://www.accuweather.com/en/us/briarcliff-manor-ny/10510/may-weather/2146224")
