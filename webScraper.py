@@ -5,9 +5,9 @@ def webscrpr1(url):
     page = requests.get(url) 
     soup = BeautifulSoup(page.content,"html.parser")
     text = soup.findAll("table")
-    
+    #print text
     newtext = text[0].findAll("td")
-    #print newtext
+    print newtext
     
     newlist = []
     for i in range(len(newtext)):

@@ -7,7 +7,7 @@ Create a new text file with all the same lines from the original file. Now in th
 Read thru the file, run thru an iterator and add one index to each line."""
 
 file_obj = open("file1.txt","r")
-#print file_obj.readlines()
+
 new_file = open("file3.txt","a")
 i = 0
 line = file_obj.readline()
@@ -15,8 +15,17 @@ while line:
     new_file.write(str(i)+line),
     line = file_obj.readline()
     i += 1
-file_obj.close()
-new_file.close()
+file_obj.close(), new_file.close()
 new_file = open("file3.txt","r")
 for line in new_file:
     print line,
+
+"""
+old_file_obj = open("file1.txt","r")
+lines = old_file_obj.readlines()
+new_file_obj = open("file3.txt","w")
+for i,line in enumerate(lines):
+    new_file_obj.write(str(i) + line)
+old_file_obj.close(), new_file_obj.close()
+"""
+
